@@ -2,6 +2,14 @@ imap <F5> <Esc>:w<CR>:!clear;python %<CR>
 :se cursorline
 "Mapping l; to escape mode
 inoremap l; <Esc>      
+"For spell check
+iab itn int
+iab turc struct
+iab ndoe node
+iab strcut struct 
+iab reutrn return
+iab numebrs numbers
+
 "Mapping kk to save option
 nnoremap kk :w<CR>
 "Mapping ! to :! option 
@@ -59,10 +67,12 @@ call plug#begin()
         Plug 'syntax/javascript.vim'
         Plug 'justinmk/vim-sneak'   
 	"Plug 'jelera/vim-javascript-syntax'
-        Plug 'thinca/vim-quickrun'
+        Plug 'Valloric/YouCompleteMe'
+	Plug 'thinca/vim-quickrun'
         Plug 'terryma/vim-multiple-cursors'
         Plug 'miyakogi/conoline.vim'
 	Plug 'Shougo/vimshell.vim'	
 	Plug 'spf13/vim-autoclose'
+	Plug 'osyo-manga/vim-over'
 filetype plugin indent on
 call plug#end()
