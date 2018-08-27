@@ -1,9 +1,14 @@
 imap <F5> <Esc>:w<CR>:!clear;python %<CR>
 :se cursorline 	"For cursor line hilighting"
-
+set linebreak
+set visualbell
+set hidden
+nnoremap <C-N> :bnext <CR>
+nnoremap <C-P> :bprev<CR>
+nnoremap ls :ls<CR>
 "Mapping l; to escape mode
 inoremap kl <Esc>      
-
+set autoread
 "For spell check
 iab itn int
 iab turc struct
@@ -11,7 +16,8 @@ iab ndoe node
 iab strcut struct 
 iab reutrn return
 iab numebrs numbers
-
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
 "Mapping kk to save option
 nnoremap kk :w<CR>
 
@@ -68,14 +74,12 @@ nnoremap <leader>f 1z=<CR>
 hi Normal guifg=Green guibg=Black
 "So that no swap file is formed
 set noswapfile
-
 "Plugins Using vim plug
 call plug#begin()
 	Plug 'scrooloose/nerdtree' "for the files to be shown in the tree form 
         Plug 'ervandew/supertab'   "for completing things in the file
         Plug 'wvffle/vimterm' 		
         Plug 'bling/vim-airline' 	"theme
-        "Plug 'scrooloose/syntastic' 	"for syntax errors in c and c++ and python
         Plug 'wvffle/vimterm' 		
         Plug 'scrooloose/nerdcommenter' 	
         Plug 'tpope/vim-surround'
@@ -92,6 +96,10 @@ call plug#begin()
 	Plug 'osyo-manga/vim-over'
 	Plug 'ap/vim-buftabline'
 	Plug 'rudes/vim-java'
-
+	Plug 'rudes/vim-java'
+	Plug 'majutsushi/tagbar'  
+	Plug 'thaerkh/vim-workspace' 
+	Plug 'vim-scripts/Smart-Tabs'
+	Plug 'majutsushi/tagbar'
 filetype plugin indent on
 call plug#end()
