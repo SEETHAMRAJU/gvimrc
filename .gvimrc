@@ -3,6 +3,8 @@ imap <F5> <Esc>:w<CR>:!clear;python %<CR>
 set linebreak
 set visualbell
 set hidden
+let g:auto_save = 1
+"This is for the autosave plugin to enable by default 
 nnoremap <C-N> :bnext <CR>
 nnoremap <C-P> :bprev<CR>
 nnoremap ls :ls<CR>
@@ -101,5 +103,6 @@ call plug#begin()
 	Plug 'thaerkh/vim-workspace' 
 	Plug 'vim-scripts/Smart-Tabs'
 	Plug 'majutsushi/tagbar'
+	Plug '907th/vim-auto-save'
 filetype plugin indent on
 call plug#end()
