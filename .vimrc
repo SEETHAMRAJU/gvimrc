@@ -3,13 +3,14 @@ call plug#begin()
 	Plug 'ervandew/supertab'
 	Plug 'wvffle/vimterm'
 	Plug 'bling/vim-airline'
-	Plug 'scrooloose/syntastic'
+"	Plug 'scrooloose/syntastic'
 	Plug 'wvffle/vimterm'
+	Plug 'jiangmiao/auto-pairs'
+'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'tpope/vim-surround'
 	Plug 'vim-scripts/delimitMate.vim'
 	Plug 'gregsexton/matchtag'
-	"Plug 'pangloss/vim-javascript'
 	Plug 'rstacruz/sparkup'
 	Plug 'mattn/emmet-vim'
 	Plug 'syntax/javascript.vim'
@@ -18,13 +19,11 @@ call plug#begin()
 	Plug 'thinca/vim-quickrun'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'miyakogi/conoline.vim'
-	"Plug 'Valloric/Y'
-	"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer --racer-completer' } 
-	"autocmd! User YouCompleteMe if !has('vim_starting') | call youcompleteme#Enable() | endif
+	"Plug 'Valloric/YouCompleteMe'
 	Plug 'Shougo/vimshell.vim'
+	Plug '907th/vim-auto-save'
 filetype plugin indent on		
 call plug#end()
-:se cursorline
 :set number
 set nowrap
 set relativenumber
