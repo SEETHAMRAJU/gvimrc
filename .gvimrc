@@ -1,12 +1,15 @@
 imap <F5> <Esc>:w<CR>:!clear;python %<CR>
-:se cursorline 	"For cursor line hilighting"
+":se cursorline 	"For cursor line hilighting"
 set linebreak
 set visualbell
 set hidden
 let g:auto_save = 1
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+
 "This is for the autosave plugin to enable by default 
-nnoremap <C-N> :bnext <CR>
-nnoremap <C-P> :bprev<CR>
+nnoremap <C-Tab> :bnext <CR>
 nnoremap ls :ls<CR>
 "Mapping l; to escape mode
 inoremap kl <Esc>      
@@ -20,6 +23,12 @@ iab reutrn return
 iab numebrs numbers
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
+let g:bargreybars_auto = 0
+let g:web_search_engine="google"
+let g:web_search_browser="chrome"
+let g:web_search_use_default_mapping = "yes"
+let g:powerline_fonts = 1
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
 "Mapping kk to save option
 nnoremap kk :w<CR>
 
@@ -60,7 +69,7 @@ set nocompatible
 syntax enable 
 filetype indent on
 set number
-set guifont=Monospace\ 18
+set guifont=Monospace\ 17
 set ch=2
 highlight cComment ctermfg=Blue guifg=Pink
 colorscheme darkblue
@@ -80,8 +89,6 @@ set noswapfile
 call plug#begin()
 	Plug 'scrooloose/nerdtree' "for the files to be shown in the tree form 
         Plug 'ervandew/supertab'   "for completing things in the file
-        Plug 'wvffle/vimterm' 		
-        Plug 'bling/vim-airline' 	"theme
         Plug 'wvffle/vimterm' 		
         Plug 'scrooloose/nerdcommenter' 	
         Plug 'tpope/vim-surround'
@@ -103,6 +110,11 @@ call plug#begin()
 	Plug 'thaerkh/vim-workspace' 
 	Plug 'vim-scripts/Smart-Tabs'
 	Plug 'majutsushi/tagbar'
-	Plug '907th/vim-auto-save'
+	Plug 'jiangmiao/auto-pairs'
+	Plug 'matze/vim-move'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'dreadnaut/vim-bargreybars'
+	Plug 'linluk/vim-websearch'
 filetype plugin indent on
 call plug#end()
